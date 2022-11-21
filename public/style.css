@@ -1,0 +1,59 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(111, 190, 226);
+    flex-wrap: wrap;
+}
+
+.logoD {
+    width: 100%;
+}
+
+.search {
+    width: 60%;
+}
+
+.logoD:hover {
+    cursor: pointer;
+}
+
+#logo {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-left: 8%;
+}
+
+
+.nav-links{
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+}
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 2.5vh;
+}
+
+li {
+    list-style: none;
+}
+
+.cartPic, .wishlist {
+    width: 4.8vh;
+    height: 4.4vh;
+    border-radius: 100%;
+    object-fit: cover;
+}
+

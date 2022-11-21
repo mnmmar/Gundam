@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gundam</title>
+</head>
+<body>
+    <h1><%=gundam.name%></h1>
+    <img src="<%=gundam.images[0]%>" alt="">
+    <img src="<%=gundam.images[1]%>" alt="">
+    <img src="<%=gundam.images[2]%>" alt="">
+    <h3>Price: $<%=gundam.price%></h3>
+    <h4>Shipping cost is $<%=gundam.shipping%></h4>
+    <h4>Estimated shipping is at <%=gundam.estimatedArrival%></h4>
+
+    <form action="/gundam/<%=gundam.id%>?_method=DELETE" method="POST">
+        <input type="submit" value="DELETE">
+    </form>
+
+    <form action="/gundam/<%=gundam.id%>/edit">
+        <input type="submit" value="EDIT">
+    </form>
+
+</body>
+</html>
