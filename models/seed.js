@@ -3,8 +3,8 @@ module.exports = [
         name: 'RX-93 Nu Gundam',
         price: 54,
         images: ['https://cdn.shopify.com/s/files/1/0727/8355/products/e43a1a49-cb62-44e9-8bcd-3c4048f4139b_900x900.jpg?v=1637946421', 
-        'https://cdn.shopify.com/s/files/1/0727/8355/products/rg-rx-93-nu-gundam-01_150x.jpg?v=1652363734', 
-        'https://cdn.shopify.com/s/files/1/0727/8355/products/rg-rx-93-nu-gundam-02_150x.jpg?v=1637940480'],
+        'https://cdn.shopify.com/s/files/1/0727/8355/products/rg-rx-93-nu-gundam-01_900x900.jpg?v=1652363734', 
+        'https://cdn.shopify.com/s/files/1/0727/8355/products/rg-rx-93-nu-gundam-02_900x900.jpg?v=1637940480'],
         shipping: 6,
         estimatedArrival: 'November 27'
 

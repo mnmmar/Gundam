@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Gundam</title>
+    <%- include ('./partials/head.ejs') %>
 </head>
 <body>
+    <%- include ('./partials/nav.ejs') %>
     <h1>Sell a Gundam!</h1>
-    <form action="/gundam" method="POST">
-        Name: <input type="text" name="name"><br>
-        Price: <input type="number" name="price"><br>
-        Images: <input type="text" name="images"><br>
-        Shipping Cost: <input type="number" name="shipping"><br>
-        Estimated Arrival: <input type="text" name="estimatedArrival"><br>
-        <input type="submit" value="Create Post">
-    </form>
+    <div>
+        <form action="/gundam" method="POST">
+            Name: <br><input type="text" name="name"><br>
+            Price: <br>$<input type="number" name="price"><br>
+            Image Links: <br><input type="text" name="images"><br>
+            Shipping Cost: <br>$<input type="number" name="shipping"><br>
+            Estimated Arrival: <br><input type="text" name="estimatedArrival"><br>
+            <input type="submit" value="Create Post" class="create">
+        </form>
+    </div>
+    
 </body>
 </html>

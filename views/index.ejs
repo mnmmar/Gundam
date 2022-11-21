@@ -1,40 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Gundam</title>
+    <%- include ('./partials/head.ejs') %>
 </head>
 <body>
-    <nav>
-        <div class="logoD">
-            <img id="logo" src="https://cdn.shopify.com/s/files/1/0727/8355/files/USAGS_new_300x.png?v=1645125097" alt="" onclick="location.href='/gundam'" />
-          <form action="" class="search">
-            <input type="text" placeholder="Search" id="search">
-            <input type="submit">
-          </form>
-        </div>
-        <ul class="nav-links">
-          <li><a href="#">Register</a></li>
-          <li><a href="#">Sign In</a></li>
-          <li><a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5ygRfCfVTofrMSBRuvrZib_8Dxro3kd61cN5sI7eAWklphZy3swwM_j4TcBJPtNNrfbc&usqp=CAU" alt="" class="wishlist"></a></li>
-          <li><a href="#"><img src="https://i.pinimg.com/originals/ca/01/f0/ca01f0f41a64b0fe46a98afeb719cac9.jpg" alt="" class="cartPic"></a></li>
 
-        </ul>
+    <%- include ('./partials/nav.ejs') %>
+
+    <button onclick="window.location.href='/gundam/new'" class="create">Create New Posting</button>
+    <div>
+        <table class="index">
+            <% for(let i = 1; i < gundam.length; i++) { %>
+                <tr>
+                    <td><a href="/gundam/<%=gundam[i].id%>"><img src="<%=gundam[i].images[0]%>" alt=""></a>
+                    <a href="/gundam/<%=gundam[i].id%>" class="name"><%=gundam[i].name%></a>
+                    <a class="name"><strong>$<%=gundam[i].price%></strong></a>
+                </td>
+                </tr>
+            <% } %>
+            </table>
     </div>
-    </nav>
-
-    <button onclick="window.location.href='/gundam/new'">Create</button>
-
-    <ul>
-        <% for(let i = 0; i < gundam.length; i++) { %>
-            <li><a href="/gundam/<%=gundam[i].id%>"><img src="<%=gundam[i].images[0]%>" alt=""></a><br>
-                <a href="/gundam/<%=gundam[i].id%>"><%=gundam[i].name%></a>
-            </li>
-        <% } %>
-    </ul>
+    
     
 </body>
 
