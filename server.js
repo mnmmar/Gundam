@@ -2,7 +2,10 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const methodOverride = require('method-override');
-const port = 3000;
+const PORT = 3000;
+if(process.env.PORT) {
+    PORT = process.env.PORT
+}
 
 const Seed = require('./models/seed.js');
 const Gundam = require('./models/schema.js');
@@ -67,7 +70,7 @@ app.delete('/gundam/:id', (request, response) => {
     });
 });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
     console.log('site is up and running');
 });
 
