@@ -83,6 +83,6 @@ app.listen(PORT, () => {
 //     console.log('The connection with mongod is established');
 // });
 
-mongoose.connect('mongodb+srv://mnmmar:<7zly82xr>@sei.n8kqkha.mongodb.net/?retryWrites=true&w=majority', () => {
+mongoose.connect('mongodb+srv://mnmmar:7zly82xr@sei.n8kqkha.mongodb.net/?retryWrites=true&w=majority', () => {
     console.log('connected to mongo');
 });
