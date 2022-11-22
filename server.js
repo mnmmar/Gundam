@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
 const methodOverride = require('method-override');
-const PORT = 3000;
+
+let PORT = 3000;
 if(process.env.PORT) {
     PORT = process.env.PORT
 }
