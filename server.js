@@ -37,7 +37,7 @@ app.get('/gundam/seed', (request, response) => {
 });
 
 //index
-app.get('/gundam', (request, response) => {
+app.get('/', (request, response) => {
     Gundam.find({}, (error, Gundam) => {
         response.render('index.ejs', {gundam: Gundam});
     });
