@@ -16,6 +16,10 @@ app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(express.json());
 
+app.get('/', (request, response) => {
+    response.redirect('/gundam')
+});
+
 
 //post
 app.post('/gundam', (request, response) => {
@@ -37,7 +41,7 @@ app.get('/gundam/seed', (request, response) => {
 });
 
 //index
-app.get('/', (request, response) => {
+app.get('/gundam', (request, response) => {
     Gundam.find({}, (error, Gundam) => {
         response.render('index.ejs', {gundam: Gundam});
     });
