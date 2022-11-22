@@ -74,6 +74,10 @@ app.listen(PORT, () => {
     console.log('site is up and running');
 });
 
-mongoose.connect('mongodb://localhost:27017/gundam', () => {
-    console.log('The connection with mongod is established');
+// mongoose.connect('mongodb://localhost:27017/gundam', () => {
+//     console.log('The connection with mongod is established');
+// });
+
+mongoose.connect('mongodb+srv://mnmmar:<7zly82xr>@sei.n8kqkha.mongodb.net/?retryWrites=true&w=majority', () => {
+    console.log('connected to mongo');
 });
