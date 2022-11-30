@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('../partials/head.ejs') %>
+</head>
+<body>
+    <%- include ('../partials/nav.ejs') %>
+    <h1>Log In to Account</h1>
+    <form action="/sessions/userLogin" method="POST">
+        Username: <input type="text" name="username" class="login"><br>
+        Password: <input type="text" name="password" class="login"><br>
+        <input type="submit" value="Login" class="login">
+    </form>
+    <h4>Don't have an account?</h4>
+    <button onclick="window.location.href='/'">Create Account</button>
+</body>
+</html>

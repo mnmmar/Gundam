@@ -5,28 +5,13 @@
 </head>
 <body>
     <%- include ('./partials/nav.ejs') %>
-    <div class="container">
-        <img src="<%=gundam.images[0]%>" alt="">
+   
         <h1><%=gundam.name%></h1>
-        <div class="carousel-container">
-
-            <div class="carousel-button previous">
-                <span class="left"></span>
-            </div>
-    
-            <div class="carousel-images">
+       
                 <% for (let i = 0; i < gundam.images.length; i++) { %>
                     <img src="<%=gundam.images[i]%>" alt="">
                 <% } %>
-            </div>
-    
-            <div class="carousel-button next">
-                <span class="right"></span>
-            </div>
-
-        </div>
-        
-    </div>
+         
     
     <h3>Price: $<%=gundam.price%></h3>
     <h4>Shipping cost is $<%=gundam.shipping%></h4>

@@ -13,7 +13,8 @@ nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(111, 190, 226);
+    /* background-color: rgb(111, 190, 226); */
+    background-image: linear-gradient(to right, rgba(115, 201, 254, 0.5), rgba(24, 127, 175, 1));
     flex-wrap: wrap;
 }
 
@@ -101,6 +102,11 @@ input {
     width: 60%;
 }
 
+.login {
+    margin: 2%;
+    width: 10%;
+}
+
 h1 {
     margin: 1%;
 }
@@ -163,5 +169,10 @@ h4 {
 
 td {
     border: 2px solid rgb(179, 175, 175);
+}
+
+footer {
+    text-align: left;
+    margin-left: 2%;
 }
 

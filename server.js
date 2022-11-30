@@ -1,7 +1,11 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const app = express();
+const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const sessionsController = require('./controllers/sessions_controller.js');
+const userController = require('./controllers/users_controller.js');
+const session = require('express-session');
+require('dotenv').config();
 
 let PORT = 3000;
 if(process.env.PORT) {
@@ -15,22 +19,37 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride('_method'));
 app.use(express.static('public'));
 app.use(express.json());
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+app.use('/users', userController);
+app.use('/sessions', sessionsController);
 
 app.get('/', (request, response) => {
-    response.redirect('/gundam')
+    response.redirect('/users/new')
 });
 
+// app.get('/sessions/gundam', (request, response) => {
+//     response.redirect('/gundam')
+// });
 
-//post
+
+//post 
 app.post('/gundam', (request, response) => {
     Gundam.create(request.body, (error, Gundam) => {
         response.redirect('/gundam')
     });
 });
 
+
+
 //new
 app.get('/gundam/new', (request, response) => {
-    response.render('new.ejs')
+    response.render('new.ejs', {
+        currentUser: request.session.currentUser
+    })
 });
 
 //seed
@@ -43,28 +62,28 @@ app.get('/gundam/seed', (request, response) => {
 //index
 app.get('/gundam', (request, response) => {
     Gundam.find({}, (error, Gundam) => {
-        response.render('index.ejs', {gundam: Gundam});
+        response.render('index.ejs', {gundam: Gundam, currentUser: request.session.currentUser});
     });
 });
 
 //show
 app.get('/gundam/:id', (request, response) => {
     Gundam.findById(request.params.id, (error, Gundam) => {
-        response.render('show.ejs', {gundam: Gundam})
+        response.render('show.ejs', {gundam: Gundam, currentUser: request.session.currentUser})
     });
 });
 
 //edit
 app.get('/gundam/:id/edit', (request, response) => {
     Gundam.findById(request.params.id, (error, foundGundam) => {
-        response.render('edit.ejs', {gundam: foundGundam})
+        response.render('edit.ejs', {gundam: foundGundam, currentUser: request.session.currentUser})
     });
 });
 
 //update
 app.put('/gundam/:id', (request, response) => {
     Gundam.findByIdAndUpdate(request.params.id, request.body, {new: true}, (error, updatedGundam) => {
-        response.render('show.ejs', {gundam: updatedGundam})
+        response.redirect('/gundam/' + request.params.id)
     });
 });
 

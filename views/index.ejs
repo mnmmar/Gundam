@@ -10,7 +10,7 @@
     <button onclick="window.location.href='/gundam/new'" class="create">Create New Posting</button>
     <div>
         <table class="index">
-            <% for(let i = 1; i < gundam.length; i++) { %>
+            <% for(let i = 0; i < gundam.length; i++) { %>
                 <tr>
                     <td><a href="/gundam/<%=gundam[i].id%>"><img src="<%=gundam[i].images[0]%>" alt=""></a>
                     <a href="/gundam/<%=gundam[i].id%>" class="name"><%=gundam[i].name%></a>
@@ -20,7 +20,10 @@
             <% } %>
             </table>
     </div>
-    
+
+    <footer>
+        <%- include ('./partials/footer.ejs') %>
+    </footer>
     
 </body>
 
