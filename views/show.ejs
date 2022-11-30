@@ -5,11 +5,11 @@
 </head>
 <body>
     <%- include ('./partials/nav.ejs') %>
-   
+    <div style="width: 60%; margin: auto;">
         <h1><%=gundam.name%></h1>
        
                 <% for (let i = 0; i < gundam.images.length; i++) { %>
-                    <img src="<%=gundam.images[i]%>" alt="">
+                    <img src="<%=gundam.images[i]%>" alt="" style="width: 50%; height: 40%;">
                 <% } %>
          
     
@@ -20,12 +20,28 @@
     <form action="/gundam/<%=gundam.id%>?_method=DELETE" method="POST">
         <input type="submit" value="DELETE" class="create">
     </form>
-
     <form action="/gundam/<%=gundam.id%>/edit">
         <input type="submit" value="EDIT" class="create">
     </form>
+    <br>
+
+    <div style="display: flex; width: 100%; height: 200px;">
+        <div>
+            <img src="https://cdn.shopify.com/s/files/1/0727/8355/files/warning2_ba3bfcc8-73c3-4dbd-9e5f-f894b8946321.png?14616" alt="" style="width: 100%; height: 100%;  object-fit: contain; position: relative; top: -80px;">
+        </div>
+        
+    <p style="text-align: left;">General Safety Warning: Products may contain sharp points, small parts, choking hazards, and other elements not suitable for children under 12 years old.</p>
+    </div>
+    
+    </div>
+   
+        
 
 
 
+
+    <footer style="width: 60%;">
+        <%- include ('./partials/footer.ejs') %>
+    </footer>
 </body>
 </html>

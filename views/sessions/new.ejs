@@ -5,13 +5,17 @@
 </head>
 <body>
     <%- include ('../partials/nav.ejs') %>
-    <h1>Log In to Account</h1>
+    <img src="https://cdn.shopify.com/s/files/1/0727/8355/files/usagundam_mascot_variants-07.png?14642" alt="" style="width: 20%; height: 20%;">
+    <!-- <p>Log In to Account</p> -->
     <form action="/sessions/userLogin" method="POST">
-        Username: <input type="text" name="username" class="login"><br>
-        Password: <input type="text" name="password" class="login"><br>
-        <input type="submit" value="Login" class="login">
+        Username: <br><input type="text" name="username" class="login" style="width: 20%;"><br>
+        Password: <br><input type="text" name="password" class="login" style="width: 20%;"><br>
+        <input type="submit" value="Login" class="login" style="width: 15%; border-radius: 20px 20px 20px 20px; background-color: rgb(34, 170, 237); border: none; padding: 1%; color: white;">
     </form>
-    <h4>Don't have an account?</h4>
-    <button onclick="window.location.href='/'">Create Account</button>
+    <p>Don't have an account?</p>
+    <button onclick="window.location.href='/'" style="width: 15%; border-radius: 20px 20px 20px 20px; background-color: rgb(34, 170, 237); border: none; padding: 1%; color: white; margin-top: 2%;">Register</button>
+    <footer>
+        <%- include ('../partials/footer.ejs') %>
+    </footer>
 </body>
 </html>
