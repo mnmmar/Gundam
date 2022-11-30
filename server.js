@@ -7,7 +7,7 @@ const userController = require('./controllers/users_controller.js');
 const session = require('express-session');
 require('dotenv').config();
 
-let PORT = 3000;
+// let PORT = 3000;
 if(process.env.PORT) {
     PORT = process.env.PORT
 }
